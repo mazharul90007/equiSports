@@ -1,8 +1,10 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Banner from "../Components/Banner";
 import Service from "../Components/Service";
-import  { useState } from "react";
+import { useState } from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
+import Lottie from "lottie-react";
+import ball from '../assets/ball.json'
 
 
 
@@ -10,8 +12,6 @@ const Home = () => {
 
     const [isDarkMode, setIsDarkMode] = useState(() => false);
     const equipments = useLoaderData();
-    // console.log(equipments);
-    // setEquipments(loadedEquipments);
 
     return (
         <div>
@@ -22,7 +22,8 @@ const Home = () => {
             />
             <Banner></Banner>
             <div>
-                <div className="text-center mt-10">
+                <div className="text-center mt-4">
+                    <Lottie animationData={ball} style={{ height: '6rem' }}></Lottie>
                     <p className="text-xl">Best Seller Product of this Week</p>
                     <h3 className="text-4xl font-semibold">Deal of The Week</h3>
                 </div>
