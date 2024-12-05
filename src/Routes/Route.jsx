@@ -7,6 +7,7 @@ import Error from "../Pages/Error";
 import Equipments from "../Pages/Equipments";
 import Details from "../Pages/Details";
 import AddEquipments from "../Pages/AddEquipments";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -34,12 +35,12 @@ const router = createBrowserRouter([
             },
             {
                 path: '/details/:id',
-                element: <Details></Details>,
+                element: <PrivateRoute><Details></Details></PrivateRoute>,
                 loader: ({params})=> fetch(`http://localhost:3000/equipments/${params.id}`)
             },
             {
                 path: '/addEquipments',
-                element: <AddEquipments></AddEquipments>
+                element: <PrivateRoute><AddEquipments></AddEquipments></PrivateRoute>
             }
         ]
     },

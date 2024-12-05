@@ -59,7 +59,7 @@ const AddEquipments = () => {
                             <input
                                 type="text"
                                 placeholder="Equipment Category"
-                                name="chef"
+                                name="category"
                                 className="input input-bordered"
                                 required />
                         </div>
@@ -72,19 +72,19 @@ const AddEquipments = () => {
                             </label>
                             <input
                                 type="number"
-                                placeholder="Enter Coffee supplier"
-                                name="supplier"
+                                placeholder="Equipment Price"
+                                name="price"
                                 className="input input-bordered"
                                 required />
                         </div>
                         <div className="form-control md:w-1/2">
                             <label className="label">
-                                <span className="label-text">Taste</span>
+                                <span className="label-text">Rating</span>
                             </label>
                             <input
-                                type="text"
-                                placeholder="Enter Coffee Taste"
-                                name="taste"
+                                type="number"
+                                placeholder="Equipment Rating"
+                                name="rating"
                                 className="input input-bordered"
                                 required />
                         </div>
@@ -93,12 +93,12 @@ const AddEquipments = () => {
                     <div className="md:flex gap-4 w-full">
                         <div className="form-control md:w-1/2">
                             <label className="label">
-                                <span className="label-text">Category</span>
+                                <span className="label-text">Customization</span>
                             </label>
                             <input
                                 type="text"
-                                placeholder="Enter Coffee Category"
-                                name="category"
+                                placeholder="Equipment Customization"
+                                name="customization"
                                 className="input input-bordered"
                                 required />
                         </div>
@@ -108,7 +108,32 @@ const AddEquipments = () => {
                             </label>
                             <input
                                 type="text"
-                                placeholder="Enter Coffee Details"
+                                placeholder="Equipment Details"
+                                name="details"
+                                className="input input-bordered"
+                                required />
+                        </div>
+                    </div>
+                    {/* Row Category and Details */}
+                    <div className="md:flex gap-4 w-full">
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">Processing Time</span>
+                            </label>
+                            <input
+                                type="date"
+                                
+                                name="processingTime"
+                                className="input input-bordered"
+                                required />
+                        </div>
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">Available Stock</span>
+                            </label>
+                            <input
+                                type="number"
+                                placeholder="Equipment Stock"
                                 name="details"
                                 className="input input-bordered"
                                 required />
@@ -126,7 +151,7 @@ const AddEquipments = () => {
                             required />
                     </div>
                     <div className="form-control mt-6">
-                        <button className="px-3 py-1 md:py-2 text-amber-700 font-semibold bg-amber-50 rounded-md shadow hover:bg-amber-100 border border-amber-700 active:scale-95 active:shadow-inner transition transform italic">Add Coffee</button>
+                        <button className="px-3 py-1 md:py-2 text-amber-700 font-semibold bg-amber-50 rounded-md shadow hover:bg-amber-100 border border-amber-700 active:scale-95 active:shadow-inner transition transform italic">Add Equipment</button>
                     </div>
                 </form>
             </div>

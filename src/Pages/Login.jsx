@@ -43,7 +43,7 @@ const Login = () => {
                 navigate(location.state.from);
             })
             .catch(() => {
-                toast.error('Invalid Email or Password')
+                // toast.error('Invalid Email or Password')
                 // console.log('Error', error);
             })
     }
