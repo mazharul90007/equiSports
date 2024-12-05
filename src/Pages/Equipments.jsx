@@ -22,7 +22,6 @@ const Equipments = () => {
                         <div tabIndex={0} role="button" className="btn border border-red-500 m-1">Sort By</div>
                         <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-auto p-2 shadow">
                             <li onClick={()=> handleSort('price')}><a>Price</a></li>
-                            <li onClick={()=> handleSort('rating')}><a>Rating</a></li>
                         </ul>
                     </div>
                 </div>

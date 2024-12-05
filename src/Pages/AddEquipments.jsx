@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { useContext } from "react";
 import { authContext } from "../Provider/AuthProvider";
+import {  Rotate } from 'react-awesome-reveal';
 
 
 const AddEquipments = () => {
@@ -60,11 +61,12 @@ const AddEquipments = () => {
             <div >
                 <h2 className="text-amber-700 text-center font-semibold text-3xl">Add Your Favourite Items <br /> with Customization</h2>
                 <div className="flex items-center justify-center my-5 text-6xl gap-8">
-                    <FaFootballBall />
-                    <IoFootball />
-                    <BiCricketBall />
-                    <MdOutlineSportsVolleyball />
-                    <PiFootballHelmetDuotone />
+
+                    <Rotate duration={1500}><FaFootballBall /></Rotate>
+                    <Rotate duration={1500}><IoFootball /></Rotate>
+                    <Rotate duration={1500}><BiCricketBall /></Rotate>
+                    <Rotate duration={1500}><MdOutlineSportsVolleyball /></Rotate>
+                    <Rotate duration={1500}><PiFootballHelmetDuotone /></Rotate>
 
                 </div>
             </div>

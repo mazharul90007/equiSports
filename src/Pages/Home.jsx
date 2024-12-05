@@ -1,7 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Banner from "../Components/Banner";
 import Service from "../Components/Service";
-import React, { useState } from "react";
+import  { useState } from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
 
 
