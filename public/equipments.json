@@ -1,0 +1,111 @@
+[
+    {
+      "ProductId": 101,
+      "Image": "https://example.com/soccer-ball.jpg",
+      "ItemName": "Pro Soccer Ball",
+      "CategoryName": "soccer",
+      "Description": "Premium soccer ball for professional matches.",
+      "Price": 50,
+      "Rating": 4.7,
+      "Customization": "Team logo print available",
+      "ProcessingTime": "2024-12-10",
+      "StockStatus": 120
+    },
+    {
+      "ProductId": 102,
+      "Image": "https://example.com/goalkeeper-gloves.jpg",
+      "ItemName": "Goalkeeper Gloves",
+      "CategoryName": "soccer",
+      "Description": "Durable gloves for improved grip and comfort.",
+      "Price": 30,
+      "Rating": 4.6,
+      "Customization": "Custom logo on gloves",
+      "ProcessingTime": "2024-12-15",
+      "StockStatus": 80
+    },
+    {
+      "ProductId": 103,
+      "Image": "https://example.com/tennis-racket.jpg",
+      "ItemName": "Elite Tennis Racket",
+      "CategoryName": "tennis",
+      "Description": "Lightweight racket for advanced players.",
+      "Price": 130,
+      "Rating": 4.8,
+      "Customization": "Personalized grip",
+      "ProcessingTime": "2024-12-12",
+      "StockStatus": 45
+    },
+    {
+      "ProductId": 104,
+      "Image": "https://example.com/tennis-balls.jpg",
+      "ItemName": "Tournament Tennis Balls",
+      "CategoryName": "tennis",
+      "Description": "High-performance tennis balls for tournaments.",
+      "Price": 20,
+      "Rating": 4.5,
+      "Customization": "Custom branding on balls",
+      "ProcessingTime": "2024-12-16",
+      "StockStatus": 200
+    },
+    {
+      "ProductId": 105,
+      "Image": "https://example.com/cricket-bat.jpg",
+      "ItemName": "Power Cricket Bat",
+      "CategoryName": "cricket",
+      "Description": "Durable cricket bat for powerful strokes.",
+      "Price": 90,
+      "Rating": 4.6,
+      "Customization": "Bat with extra grip",
+      "ProcessingTime": "2024-12-14",
+      "StockStatus": 70
+    },
+    {
+      "ProductId": 106,
+      "Image": "https://example.com/cricket-ball.jpg",
+      "ItemName": "Leather Cricket Ball",
+      "CategoryName": "cricket",
+      "Description": "High-quality leather ball for professional matches.",
+      "Price": 25,
+      "Rating": 4.7,
+      "Customization": "Team logo on the ball",
+      "ProcessingTime": "2024-12-11",
+      "StockStatus": 150
+    },
+    {
+      "ProductId": 107,
+      "Image": "https://example.com/soccer-shoes.jpg",
+      "ItemName": "Pro Soccer Shoes",
+      "CategoryName": "soccer",
+      "Description": "Comfortable shoes designed for soccer players.",
+      "Price": 70,
+      "Rating": 4.6,
+      "Customization": "Color and size options",
+      "ProcessingTime": "2024-12-18",
+      "StockStatus": 100
+    },
+    {
+      "ProductId": 108,
+      "Image": "https://example.com/tennis-bag.jpg",
+      "ItemName": "Tennis Gear Bag",
+      "CategoryName": "tennis",
+      "Description": "Spacious and durable bag for tennis equipment.",
+      "Price": 60,
+      "Rating": 4.5,
+      "Customization": "Custom player name tag",
+      "ProcessingTime": "2024-12-17",
+      "StockStatus": 30
+    },
+    {
+      "ProductId": 109,
+      "Image": "https://example.com/cricket-gloves.jpg",
+      "ItemName": "Cricket Batting Gloves",
+      "CategoryName": "cricket",
+      "Description": "Premium gloves for batting comfort and protection.",
+      "Price": 40,
+      "Rating": 4.6,
+      "Customization": "Custom fit",
+      "ProcessingTime": "2024-12-13",
+      "StockStatus": 50
+    }
+  ]
+  
