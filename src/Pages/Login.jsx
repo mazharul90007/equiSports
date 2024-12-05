@@ -15,13 +15,13 @@ const Login = () => {
     const emailRef = useRef();
 
 
-    const { handleGoogleLogin, handleLogin, handleForgetPassword } = useContext(authContext);
+    const { handleGoogleLogin, handleLogin } = useContext(authContext);
 
     const handleGoogleSignin = () => {
         handleGoogleLogin()
             .then(() => {
                 toast.success('Google LogIn Successfull')
-                navigate(location.state.from);
+                navigate(location.state?.from || '/');
             })
             .catch(() => {
                 toast.error('Something Wrong. Please Try Again')
@@ -37,30 +37,18 @@ const Login = () => {
         // console.log(email, password);
 
         handleLogin(email, password)
-            .then(() => {
+            .then((result) => {
+                if (result) {
+                    toast.success('LogIn Successful')
+                    navigate(location.state?.from || '/');
+                }
 
-                toast.success('LogIn Successful')
-                navigate(location.state.from);
             })
-            .catch(() => {
-                // toast.error('Invalid Email or Password')
+            .catch((error) => {
+                console.log(error)
+                toast.error('Invalid Email or Password')
                 // console.log('Error', error);
             })
-    }
-
-    const handleResetPass = () => {
-        const email = emailRef.current.value;
-        if (!email) {
-            toast.error('Please Enter Valid Email')
-        } else {
-            handleForgetPassword(email)
-                .then(() => {
-                    toast.success('Reset Email send, Please check your Email')
-                })
-                .catch(() => {
-                    toast.error('Something Went Wrong. Please Try Again')
-                })
-        }
     }
 
     return (
@@ -112,7 +100,7 @@ const Login = () => {
                                 placeholder="********"
                                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
                             />
-                            <p onClick={() => handleResetPass} className="text-right text-sm text-green-500 hover:underline mt-1 cursor-pointer">
+                            <p className="text-right text-sm text-green-500 hover:underline mt-1 cursor-pointer">
                                 Forgot password?
                             </p>
                         </div>

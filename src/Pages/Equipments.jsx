@@ -1,13 +1,31 @@
 
+import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 
 const Equipments = () => {
-    const equipments = useLoaderData();
+    const loadedEquipments = useLoaderData();
+    const [equipments, setEquipments] = useState(loadedEquipments)
     console.log(equipments);
+
+    const handleSort = (sortType)=>{
+        if(sortType == 'price'){
+            const sortPrice = [...equipments].sort((a , b)=> b.Price - a.Price);
+            setEquipments(sortPrice);
+        }
+    }
     return (
         <div>
             <div>
+                <div className="flex mb-6">
+                    <div className="dropdown dropdown-left mx-auto">
+                        <div tabIndex={0} role="button" className="btn border border-red-500 m-1">Sort By</div>
+                        <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-auto p-2 shadow">
+                            <li onClick={()=> handleSort('price')}><a>Price</a></li>
+                            <li onClick={()=> handleSort('rating')}><a>Rating</a></li>
+                        </ul>
+                    </div>
+                </div>
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}

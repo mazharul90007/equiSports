@@ -1,9 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 
 
-const Details = () => {
-    const equipment = useLoaderData();
-    console.log(equipment);
+const MyEquipmentDetails = () => {
+
+    const myEquipment = useLoaderData();
+
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
@@ -28,42 +29,42 @@ const Details = () => {
                             {/* row 1 */}
                             <tr>
                                 <th>Name</th>
-                                <td>{equipment.ItemName}</td>
+                                <td>{myEquipment.ItemName}</td>
                             </tr>
                             {/* row 2 */}
                             <tr>
                                 <th>Category</th>
-                                <td>{equipment.CategoryName}</td>
+                                <td>{myEquipment.CategoryName}</td>
                             </tr>
                             {/* row 3*/}
                             <tr>
                                 <th>Price</th>
-                                <td>$ {equipment.Price}</td>
+                                <td>$ {myEquipment.Price}</td>
                             </tr>
                             {/* row 4 */}
                             <tr>
                                 <th>Rating</th>
-                                <td>{equipment.Rating}/5.0</td>
+                                <td>{myEquipment.Rating}/5.0</td>
                             </tr>
                             {/* row 5 */}
                             <tr>
                                 <th>Description</th>
-                                <td>{equipment.Description}</td>
+                                <td>{myEquipment.Description}</td>
                             </tr>
                             {/* row 6 */}
                             <tr>
                                 <th>Customization</th>
-                                <td>{equipment.Customization}</td>
+                                <td>{myEquipment.Customization}</td>
                             </tr>
                             {/* row 7 */}
                             <tr>
                                 <th>Processing Time</th>
-                                <td>{equipment.ProcessingTime}</td>
+                                <td>{myEquipment.ProcessingTime}</td>
                             </tr>
                             {/* row 8 */}
                             <tr>
                                 <th>Stock</th>
-                                <td>{equipment.StockStatus}</td>
+                                <td>{myEquipment.StockStatus}</td>
                             </tr>
 
                         </tbody>
@@ -74,4 +75,4 @@ const Details = () => {
     );
 };
 
-export default Details;
+export default MyEquipmentDetails;

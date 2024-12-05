@@ -1,18 +1,25 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Banner from "../Components/Banner";
 import Service from "../Components/Service";
+import React, { useState } from "react";
+import DarkModeToggle from "react-dark-mode-toggle";
 
 
 
 const Home = () => {
 
-
+    const [isDarkMode, setIsDarkMode] = useState(() => false);
     const equipments = useLoaderData();
     // console.log(equipments);
     // setEquipments(loadedEquipments);
 
     return (
         <div>
+            <DarkModeToggle
+                onChange={setIsDarkMode}
+                checked={isDarkMode}
+                size={80}
+            />
             <Banner></Banner>
             <div>
                 <div className="text-center mt-10">

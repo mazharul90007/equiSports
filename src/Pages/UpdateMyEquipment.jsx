@@ -1,3 +1,4 @@
+import { useLoaderData } from "react-router-dom";
 import { FaFootballBall } from "react-icons/fa";
 import { IoFootball } from "react-icons/io5";
 import { BiCricketBall } from "react-icons/bi";
@@ -5,15 +6,13 @@ import { MdOutlineSportsVolleyball } from "react-icons/md";
 import { PiFootballHelmetDuotone } from "react-icons/pi";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
-import { useContext } from "react";
-import { authContext } from "../Provider/AuthProvider";
 
 
-const AddEquipments = () => {
+const UpdateMyEquipment = () => {
+    const equipment = useLoaderData()
+    // console.log(updateEquipment);
 
-    const { user } = useContext(authContext);
-
-    const handleAddEquipments = (e) => {
+    const handleUpdateEquipments = (e) => {
         e.preventDefault();
         const form = e.target;
         const ItemName = form.name.value;
@@ -26,39 +25,40 @@ const AddEquipments = () => {
         const StockStatus = form.stock.value;
         const Image = form.photo.value
 
-        const equipments = {
+        const updatedEquipments = {
             ItemName,
             CategoryName,
-            Price, Rating,
+            Price, 
+            Rating,
             Customization,
             Description,
             ProcessingTime,
             StockStatus,
-            Image,
-            email: user?.email
+            Image
         }
 
-        console.log(equipments);
-        fetch('http://localhost:3000/equipments', {
-            method: 'POST',
+        console.log(updatedEquipments);
+        fetch(`http://localhost:3000/equipments/${equipment._id}`, {
+            method: 'PATCH',
             headers: {
-                'content-type': 'application/json'
+                'content-type': "application/json"
             },
-            body: JSON.stringify(equipments)
+            body: JSON.stringify(updatedEquipments)
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                if (data.insertedId) {
-                    toast.success('Equipment Added Successfully')
+                console.log(data);
+                if(data.modifiedCount > 0){
+                    toast.success('Equipment Updated Successfully')
                 }
             })
     }
 
+
     return (
         <div className="bg-[#f4f3f1] md:w-10/12 mx-auto md:p-8 rounded-lg">
             <div >
-                <h2 className="text-amber-700 text-center font-semibold text-3xl">Add Your Favourite Items <br /> with Customization</h2>
+                <h2 className="text-amber-700 text-center font-semibold text-3xl">Update Your Favourite Items <br /> with Customization</h2>
                 <div className="flex items-center justify-center my-5 text-6xl gap-8">
                     <FaFootballBall />
                     <IoFootball />
@@ -69,7 +69,7 @@ const AddEquipments = () => {
                 </div>
             </div>
             <div className="">
-                <form onSubmit={handleAddEquipments} className="card-body">
+                <form onSubmit={handleUpdateEquipments} className="card-body">
                     {/* Row name and Category */}
                     <div className="md:flex gap-4 w-full">
                         <div className="form-control md:w-1/2">
@@ -80,6 +80,7 @@ const AddEquipments = () => {
                                 type="text"
                                 placeholder="Equipment Name"
                                 name="name"
+                                defaultValue={equipment.ItemName}
                                 className="input input-bordered"
                                 required />
                         </div>
@@ -91,6 +92,7 @@ const AddEquipments = () => {
                                 type="text"
                                 placeholder="Equipment Category"
                                 name="category"
+                                defaultValue={equipment.CategoryName}
                                 className="input input-bordered"
                                 required />
                         </div>
@@ -105,6 +107,7 @@ const AddEquipments = () => {
                                 type="number"
                                 placeholder="Equipment Price"
                                 name="price"
+                                defaultValue={equipment.Price}
                                 className="input input-bordered"
                                 required />
                         </div>
@@ -117,6 +120,7 @@ const AddEquipments = () => {
                                 placeholder="Equipment Rating"
                                 list="rating-options"
                                 name="rating"
+                                defaultValue={equipment.Rating}
                                 className="input input-bordered"
                                 required />
                             <datalist id="rating-options">
@@ -138,6 +142,7 @@ const AddEquipments = () => {
                                 type="text"
                                 placeholder="Equipment Customization"
                                 name="customization"
+                                defaultValue={equipment.Customization}
                                 className="input input-bordered"
                                 required />
                         </div>
@@ -149,6 +154,7 @@ const AddEquipments = () => {
                                 type="text"
                                 placeholder="Equipment Details"
                                 name="details"
+                                defaultValue={equipment.Description}
                                 className="input input-bordered"
                                 required />
                         </div>
@@ -163,6 +169,7 @@ const AddEquipments = () => {
                                 type="date"
 
                                 name="processingTime"
+                                defaultValue={equipment.ProcessingTime}
                                 className="input input-bordered"
                                 required />
                         </div>
@@ -174,6 +181,7 @@ const AddEquipments = () => {
                                 type="number"
                                 placeholder="Equipment Stock"
                                 name="stock"
+                                defaultValue={equipment.StockStatus}
                                 className="input input-bordered"
                                 required />
                         </div>
@@ -186,11 +194,12 @@ const AddEquipments = () => {
                             type="text"
                             placeholder="Enter Photo URL"
                             name="photo"
+                            defaultValue={equipment.Image}
                             className="input input-bordered"
                             required />
                     </div>
                     <div className="form-control mt-6">
-                        <button className="px-3 py-1 md:py-2 text-amber-700 font-semibold bg-amber-50 rounded-md shadow hover:bg-amber-100 border border-amber-700 active:scale-95 active:shadow-inner transition transform italic">Add Equipment</button>
+                        <button className="px-3 py-1 md:py-2 text-amber-700 font-semibold bg-amber-50 rounded-md shadow hover:bg-amber-100 border border-amber-700 active:scale-95 active:shadow-inner transition transform italic">Update Equipment</button>
                     </div>
                 </form>
             </div>
@@ -198,4 +207,4 @@ const AddEquipments = () => {
     );
 };
 
-export default AddEquipments;
+export default UpdateMyEquipment;
