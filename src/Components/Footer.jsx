@@ -1,17 +1,26 @@
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaLocationDot, FaPhone, FaClock } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 text-gray-200">
+        <footer className="bg-gray-900 text-gray-200">
             <div className="container mx-auto py-5 grid grid-cols-1 md:grid-cols-4 gap-8">
                 {/* Logo and About */}
-                <div>
+                <div className="flex flex-col gap-4">
                     <h3 className="text-3xl font-bold text-green-400 mb-4">equiSports</h3>
-                    <p className="text-gray-400 text-sm">
-                        Your one-stop shop for premium sports equipment. Gear up for your best
-                        performance with equiSports.
-                    </p>
+                    <div className="flex items-center gap-3">
+                        <FaLocationDot />
+                        <p>Address: <span className="italic">47 SandGate Rd, Newcastle, Australia</span></p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                        <FaPhone />
+                        <p>TelePhone: <span className="italic">+61414343169</span></p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                        <FaClock />
+                        <p>Opening: <span className="italic">Mon-Thu(9:00Am-10:00Pm)</span></p>
+                    </div>
                 </div>
 
                 {/* Quick Links */}
