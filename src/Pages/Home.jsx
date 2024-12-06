@@ -5,6 +5,10 @@ import { useState } from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
 import Lottie from "lottie-react";
 import ball from '../assets/ball.json'
+import { MdOutlineSportsSoccer } from "react-icons/md";
+import { IoTennisballSharp } from "react-icons/io5";
+import { BiCricketBall } from "react-icons/bi";
+import { Rotate, Slide } from "react-awesome-reveal";
 
 
 
@@ -26,6 +30,28 @@ const Home = () => {
                     <Lottie animationData={ball} style={{ height: '6rem' }}></Lottie>
                     <p className="text-xl">Best Seller Product of this Week</p>
                     <h3 className="text-4xl font-semibold">Deal of The Week</h3>
+                </div>
+                <div className="flex gap-4 md:gap-20 justify-center my-5">
+                    <Slide direction="left">
+                        <div>
+                            <div className="text-7xl"><MdOutlineSportsSoccer /></div>
+                            <p className="py-2 px-3 border border-purple-500 w-fit rounded-xl font-medium cursor-pointer">Soccer</p>
+                        </div>
+                    </Slide>
+
+                    <div>
+                        <Rotate>
+                            <div className="text-7xl"><IoTennisballSharp /></div>
+                        </Rotate>
+                        <p className="py-2 px-3 border border-purple-500 w-fit rounded-xl font-medium cursor-pointer">Tennis</p>
+                    </div>
+
+                    <Slide direction="right">
+                        <div >
+                            <div className="text-7xl"><BiCricketBall /></div>
+                            <p className="py-2 px-3 border border-purple-500 w-fit rounded-xl font-medium cursor-pointer">Cricket</p>
+                        </div>
+                    </Slide>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
