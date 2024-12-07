@@ -180,6 +180,31 @@ const AddEquipments = () => {
                                 required />
                         </div>
                     </div>
+                    {/* Row User Name and Email */}
+                    <div className="md:flex gap-4 w-full">
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">User Name</span>
+                            </label>
+                            <input
+                                type="text"
+                                value={user.displayName || "No User Name"}
+                                name="processingTime"
+                                className="input input-bordered disabled:border-gray-300"
+                                disabled/>
+                        </div>
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">User Email</span>
+                            </label>
+                            <input
+                                type="text"
+                                value={user.email || 'No Email'}
+                                name="stock"
+                                className="input input-bordered disabled:border-gray-300"
+                                disabled />
+                        </div>
+                    </div>
                     <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text">Photo</span>
