@@ -67,8 +67,10 @@ const MyEquipments = () => {
                         <div className="card bg-base-100  shadow">
                             <figure>
                                 <img
-                                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                className="w-[350px] h-[220px]"
+                                    src={myEquipment.Image}
                                     alt="Shoes" />
+                                    
                             </figure>
                             <div className="card-body">
                                 <h2 className="card-title">{myEquipment.ItemName}</h2>

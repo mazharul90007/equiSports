@@ -9,6 +9,7 @@ import { BiCricketBall } from "react-icons/bi";
 import { Rotate, Slide } from "react-awesome-reveal";
 import { useContext } from "react";
 import { authContext } from "../Provider/AuthProvider";
+import Partner from "../Components/Partner";
 
 
 
@@ -17,6 +18,7 @@ const Home = () => {
 
 
     const equipments = useLoaderData();
+    console.log(equipments);
     const { isDarkMode } = useContext(authContext)
 
     return (
@@ -58,7 +60,7 @@ const Home = () => {
                                 <div className="card bg-base-100  shadow">
                                     <figure>
                                         <img
-                                            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                            src={equipment.Image}
                                             alt="Shoes" />
                                     </figure>
                                     <div className="card-body">
@@ -77,6 +79,9 @@ const Home = () => {
 
                     <div>
                         <Service></Service>
+                    </div>
+                    <div>
+                        <Partner></Partner>
                     </div>
 
                 </div>

@@ -8,22 +8,13 @@ const Details = () => {
         <div className="card bg-base-100 shadow-xl w-11/12 md:w-10/12 mx-auto">
             <figure className="px-10 pt-10">
                 <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                    src={equipment.Image}
                     alt="Shoes"
                     className="rounded-xl" />
             </figure>
             <div className="items-center text-center my-10 v">
                 <div className="overflow-x-auto">
                     <table className="table text-xlc">
-                        {/* head
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Name</th>
-                                <th>Job</th>
-                                <th>Favorite Color</th>
-                            </tr>
-                        </thead> */}
                         <tbody>
                             {/* row 1 */}
                             <tr>
