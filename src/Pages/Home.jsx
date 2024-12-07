@@ -18,7 +18,7 @@ const Home = () => {
 
 
     const equipments = useLoaderData();
-    console.log(equipments);
+    // console.log(equipments);
     const { isDarkMode } = useContext(authContext)
 
     return (

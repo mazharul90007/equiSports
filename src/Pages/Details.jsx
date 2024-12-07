@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router-dom";
 
 const Details = () => {
     const equipment = useLoaderData();
-    console.log(equipment);
+    // console.log(equipment);
     return (
         <div className="card bg-base-100 shadow-xl w-11/12 md:w-10/12 mx-auto">
             <figure className="px-10 pt-10">

@@ -37,8 +37,8 @@ const UpdateMyEquipment = () => {
             Image
         }
 
-        console.log(updatedEquipments);
-        fetch(`http://localhost:3000/equipments/${equipment._id}`, {
+        // console.log(updatedEquipments);
+        fetch(`https://equi-sports-server-five.vercel.app/equipments/${equipment._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': "application/json"
@@ -47,7 +47,7 @@ const UpdateMyEquipment = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if(data.modifiedCount > 0){
                     toast.success('Equipment Updated Successfully')
                 }

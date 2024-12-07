@@ -13,15 +13,15 @@ const MyEquipments = () => {
 
 
     const [myEquipments, setMyEquipments] = useState([])
-    console.log(myEquipments)
+    // console.log(myEquipments)
 
-    const url = `http://localhost:3000/equipments?email=${user.email}`
+    const url = `https://equi-sports-server-five.vercel.app/equipments?email=${user.email}`
 
     useEffect(()=>{
         fetch(url)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
             setMyEquipments(data)
         })
     },[url])
@@ -39,12 +39,12 @@ const MyEquipments = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:3000/equipments/${id}`, {
+                fetch(`https://equi-sports-server-five.vercel.app/equipments/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
+                        // console.log(data)
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",

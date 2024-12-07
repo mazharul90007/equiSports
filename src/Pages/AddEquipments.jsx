@@ -39,8 +39,8 @@ const AddEquipments = () => {
             email: user?.email
         }
 
-        console.log(equipments);
-        fetch('http://localhost:3000/equipments', {
+        // console.log(equipments);
+        fetch('https://equi-sports-server-five.vercel.app/equipments', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -49,7 +49,7 @@ const AddEquipments = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 if (data.insertedId) {
                     toast.success('Equipment Added Successfully')
                 }

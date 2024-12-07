@@ -12,6 +12,7 @@ const Registration = () => {
     const navigate = useNavigate()
 
     const { handleRegister, profileUpdate } = useContext(authContext);
+   
 
     const handleRegistrationForm = (e) => {
         e.preventDefault()
@@ -36,12 +37,10 @@ const Registration = () => {
 
                 profileUpdate(name, photoURL)
                     .then(() => {
-                        console.log('Profile Updated')
-                        // toast('Profile Updated Successfully')
+                
                     })
                     .catch(() => {
-                        console.log('Something wrong')
-                        // console.log(error)
+                        
                     })
                 // console.log(res)
                 navigate('/');

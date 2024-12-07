@@ -6,7 +6,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const Equipments = () => {
     const loadedEquipments = useLoaderData();
     const [equipments, setEquipments] = useState(loadedEquipments)
-    console.log(equipments);
+    // console.log(equipments);
 
     const handleSort = (sortType)=>{
         if(sortType == 'price'){
