@@ -3,9 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { authContext } from "../Provider/AuthProvider";
+import DarkModeToggle from "react-dark-mode-toggle";
 
 
 const Navbar = () => {
+
+    const { isDarkMode, setIsDarkMode } = useContext(authContext);
 
     const { user, logOut, setUser } = useContext(authContext);
 
@@ -65,7 +68,9 @@ const Navbar = () => {
                     {list}
                 </ul>
             </div>
+
             <div className="navbar-end flex gap-3">
+
                 {
                     user &&
                     <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
@@ -82,6 +87,13 @@ const Navbar = () => {
                                 <Link to={'/login'} className="btn border border-green-400">LogIn / SignUp</Link>
                             </div>
                     }
+                </div>
+                <div>
+                    <DarkModeToggle
+                        onChange={setIsDarkMode}
+                        checked={isDarkMode}
+                        size={60}
+                    />
                 </div>
             </div>
         </div>

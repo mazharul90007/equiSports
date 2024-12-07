@@ -17,7 +17,7 @@ const Registration = () => {
         e.preventDefault()
         const form = e.target;
         const name = form.name.value;
-        const photo = form.photo.value;
+        const photoURL = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
@@ -33,6 +33,16 @@ const Registration = () => {
         handleRegister(email, password)
             .then(() => {
                 toast.success('Registration Successfull')
+                
+                profileUpdate(name, photoURL)
+                    .then(() => {
+                        console.log('Profile Updated')
+                        // toast('Profile Updated Successfully')
+                    })
+                    .catch(() => {
+                        console.log('Something wrong')
+                        // console.log(error)
+                    })
                 // console.log(res)
                 navigate('/');
 
@@ -48,13 +58,7 @@ const Registration = () => {
             })
 
 
-        profileUpdate(name, photo)
-            .then(() => {
-                // toast('Profile Updated Successfully')
-            })
-            .catch(() => {
-                // console.log(error)
-            })
+
     }
     return (
         <div className="flex items-center justify-center md:h-screen my-5 md:p-10">

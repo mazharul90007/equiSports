@@ -12,6 +12,7 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [isDarkMode, setIsDarkMode] = useState(() => false);
 
 
     const googleProvider = new GoogleAuthProvider();
@@ -40,7 +41,7 @@ const AuthProvider = ({ children }) => {
 
     }
     const profileUpdate = (name, photoURL) => {
-        setLoading(true);
+        setLoading(true)
         return updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: photoURL
@@ -78,6 +79,9 @@ const AuthProvider = ({ children }) => {
         loading,
         setLoading,
         profileUpdate,
+        isDarkMode,
+        setIsDarkMode
+
 
     }
 
