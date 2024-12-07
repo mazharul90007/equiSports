@@ -6,11 +6,14 @@ import { MdOutlineSportsVolleyball } from "react-icons/md";
 import { PiFootballHelmetDuotone } from "react-icons/pi";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import { useContext } from "react";
+import { authContext } from "../Provider/AuthProvider";
 
 
 const UpdateMyEquipment = () => {
     const equipment = useLoaderData()
-    // console.log(updateEquipment);
+    console.log(equipment);
+    const { user } = useContext(authContext)
 
     const handleUpdateEquipments = (e) => {
         e.preventDefault();
@@ -28,7 +31,7 @@ const UpdateMyEquipment = () => {
         const updatedEquipments = {
             ItemName,
             CategoryName,
-            Price, 
+            Price,
             Rating,
             Customization,
             Description,
@@ -48,7 +51,7 @@ const UpdateMyEquipment = () => {
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
-                if(data.modifiedCount > 0){
+                if (data.modifiedCount > 0) {
                     toast.success('Equipment Updated Successfully')
                 }
             })
@@ -184,6 +187,31 @@ const UpdateMyEquipment = () => {
                                 defaultValue={equipment.StockStatus}
                                 className="input input-bordered"
                                 required />
+                        </div>
+                    </div>
+                    {/* Row User Name and Email */}
+                    <div className="md:flex gap-4 w-full">
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">User Name</span>
+                            </label>
+                            <input
+                                type="text"
+                                value={user.displayName || "No User Name"}
+                                name="processingTime"
+                                className="input input-bordered disabled:border-gray-300"
+                                disabled />
+                        </div>
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">User Email</span>
+                            </label>
+                            <input
+                                type="text"
+                                value={user.email || 'No Email'}
+                                name="stock"
+                                className="input input-bordered disabled:border-gray-300"
+                                disabled />
                         </div>
                     </div>
                     <div className="form-control w-full">

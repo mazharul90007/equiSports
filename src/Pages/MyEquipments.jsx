@@ -82,7 +82,7 @@ const MyEquipments = () => {
                                 <p>Customization: {myEquipment.Customization}</p>
                                 <p>Processing Time: {myEquipment.ProcessingTime}</p>
                                 <p>Uploaded From: {myEquipment.email}</p>
-                                <div className="flex justify-between items-center mt-8">
+                                <div className="grid grid-cols-3 items-center mt-8">
                                     <div>
                                         <Link to={`/myEquipmentDetails/${myEquipment._id}`}><button className="text-center py-2 px-4 border border-red-500 w-fit mx-auto rounded-lg">Details</button></Link>
                                     </div>
