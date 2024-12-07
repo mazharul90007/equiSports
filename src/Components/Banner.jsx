@@ -14,7 +14,7 @@ const Banner = () => {
                 <img
                     src={img1}
                     className="w-full" />
-                <div className="absolute flex items-center pl-16 h-full top-0 gap-4 bg-gradient-to-r from-[#151515] to-[#15151500]">
+                <div className="absolute flex items-center pl-3 md:pl-16 h-full top-0 gap-4 bg-gradient-to-r from-[#151515] to-[#15151500]">
                     <div className='w-8/12'>
                         <Slide duration={1500} direction='right'>
                             <h2 className='text-5xl text-white font-semibold'>All Collections of Sports Equipments</h2>

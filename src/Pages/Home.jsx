@@ -21,7 +21,7 @@ const Home = () => {
 
     return (
         <div className={isDarkMode && 'bg-slate-800'}>
-            <div className="pt-10 w-10/12 mx-auto">
+            <div className="py-10 w-11/12 md:w-10/12 mx-auto">
                 <Banner></Banner>
                 <div>
                     <div className={isDarkMode ? 'text-white text-center mt-4' : 'text-center mt-4'}>
