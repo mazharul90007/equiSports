@@ -60,7 +60,7 @@ const MyEquipments = () => {
     }
 
     return (
-        <div className="min-h-[calc(100vh_-_440px)]">
+        <div className="min-h-[calc(100vh_-_440px)] w-10/12 mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {
                     myEquipments.map(myEquipment => <div key={myEquipment._id}>

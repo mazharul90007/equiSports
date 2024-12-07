@@ -15,7 +15,7 @@ const Equipments = () => {
         }
     }
     return (
-        <div>
+        <div className="w-10/12 mx-auto">
             <div>
                 <div className="flex mb-6">
                     <div className="dropdown dropdown-left mx-auto">
