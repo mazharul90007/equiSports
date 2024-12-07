@@ -12,7 +12,7 @@ import { authContext } from "../Provider/AuthProvider";
 
 const UpdateMyEquipment = () => {
     const equipment = useLoaderData()
-    console.log(equipment);
+    // console.log(equipment);
     const { user } = useContext(authContext)
 
     const handleUpdateEquipments = (e) => {
