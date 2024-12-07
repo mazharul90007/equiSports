@@ -71,16 +71,16 @@ const Footer = () => {
             <div className="border-t border-gray-700 mt-4 py-4 text-center">
                 <p className="text-sm text-gray-500">© 2024 equiSports. All rights reserved.</p>
                 <div className="flex justify-center space-x-4 mt-4 text-2xl">
-                    <Link className="hover:text-green-400 transition">
+                    <Link to={'https://www.facebook.com/'} className="hover:text-green-400 transition">
                         <FaFacebookF />
                     </Link>
-                    <Link href="#" className="hover:text-green-400 transition">
+                    <Link to={'https://x.com/'} className="hover:text-green-400 transition">
                         <FaTwitter />
                     </Link>
-                    <Link href="#" className="hover:text-green-400 transition">
+                    <Link to={'https://www.instagram.com/'} className="hover:text-green-400 transition">
                         <FaInstagram />
                     </Link>
-                    <Link href="#" className="hover:text-green-400 transition">
+                    <Link to={'https://www.linkedin.com/'} className="hover:text-green-400 transition">
                         <FaLinkedin />
                     </Link>
                 </div>
