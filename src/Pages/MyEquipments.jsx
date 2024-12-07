@@ -1,16 +1,30 @@
-import { useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 // import { toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css'
 import Swal from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
+import { authContext } from "../Provider/AuthProvider";
 
 
 const MyEquipments = () => {
-    const loadedMyEquipments = useLoaderData();
+    const {user} = useContext(authContext)
+    // const loadedMyEquipments = useLoaderData();
 
-    const [myEquipments, setMyEquipments] = useState(loadedMyEquipments)
+
+    const [myEquipments, setMyEquipments] = useState([])
     console.log(myEquipments)
+
+    const url = `http://localhost:3000/equipments?email=${user.email}`
+
+    useEffect(()=>{
+        fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            setMyEquipments(data)
+        })
+    },[url])
 
     const handleDelete = (id) => {
 
@@ -46,7 +60,7 @@ const MyEquipments = () => {
     }
 
     return (
-        <div>
+        <div className="min-h-[calc(100vh_-_440px)]">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {
                     myEquipments.map(myEquipment => <div key={myEquipment._id}>
