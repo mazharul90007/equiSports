@@ -60,7 +60,7 @@ const AddEquipments = () => {
         <div className="bg-[#f4f3f1] md:p-8 rounded-lg w-11/12 md:w-10/12 mx-auto">
             <div >
                 <h2 className="text-amber-700 text-center font-semibold text-3xl">Add Your Favourite Items <br /> with Customization</h2>
-                <div className="flex items-center justify-center my-5 text-6xl gap-8">
+                <div className="flex items-center justify-center my-5 text-4xl md:text-6xl gap-8">
 
                     <Rotate duration={1500}><FaFootballBall /></Rotate>
                     <Rotate duration={1500}><IoFootball /></Rotate>

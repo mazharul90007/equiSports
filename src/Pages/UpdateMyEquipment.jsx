@@ -62,7 +62,7 @@ const UpdateMyEquipment = () => {
         <div className="bg-[#f4f3f1] w-11/12 md:w-10/12 mx-auto md:p-8 rounded-lg">
             <div >
                 <h2 className="text-amber-700 text-center font-semibold text-3xl">Update Your Favourite Items <br /> with Customization</h2>
-                <div className="flex items-center justify-center my-5 text-6xl gap-8">
+                <div className="flex items-center justify-center my-5 text-4xl md:text-6xl gap-8">
                     <FaFootballBall />
                     <IoFootball />
                     <BiCricketBall />
