@@ -5,11 +5,12 @@ import img1 from '../assets/banner1.jpg'
 import img2 from '../assets/banner2.jpg'
 import img3 from '../assets/banner3.jpg'
 import img4 from '../assets/banner4.jpg'
+import { Link } from "react-router-dom";
 
 
 const Banner = () => {
     return (
-        <div className="carousel w-full h-[450px] rounded-xl">
+        <div className="carousel w-full h-[550px]">
             <div id="slide1" className="carousel-item relative w-full">
                 <img
                     src={img1}
@@ -20,10 +21,12 @@ const Banner = () => {
                             <h2 className='text-5xl text-white font-semibold'>All Collections of Sports Equipments</h2>
                         </Slide>
                         <Slide duration={1500}>
-                            <p className='text-white my-4'>We have all kinds of Sports Equipments and Items. All are in reasonable price. </p>
+                            <p className='text-white my-4'>We have all kinds of Sports Equipments and Items current market Price and details.</p>
                         </Slide>
                         <div className='flex gap-3'>
-                            <button className="btn btn-warning">Discover More</button>
+                            <Link to={'/equipments'}>
+                                <button className="btn btn-warning">Discover More</button>
+                            </Link>
                             <button className="btn btn-outline btn-accent">Best Deal</button>
                         </div>
 

@@ -12,7 +12,7 @@ const Registration = () => {
     const navigate = useNavigate()
 
     const { handleRegister, profileUpdate } = useContext(authContext);
-   
+
 
     const handleRegistrationForm = (e) => {
         e.preventDefault()
@@ -37,10 +37,11 @@ const Registration = () => {
 
                 profileUpdate(name, photoURL)
                     .then(() => {
-                
+                        
+
                     })
                     .catch(() => {
-                        
+
                     })
                 // console.log(res)
                 navigate('/');

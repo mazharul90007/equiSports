@@ -1,24 +1,27 @@
-import img from '../assets/banner2.jpg'
+
 import { IoBasketballOutline } from "react-icons/io5";
 import { FaFootballBall } from "react-icons/fa";
 import { GiAmericanFootballHelmet } from "react-icons/gi";
+import Lottie from "lottie-react";
+import onlineShopping from '../../public/online-shopping.json'
+import { authContext } from "../Provider/AuthProvider";
+import { useContext } from "react";
 
 const Service = () => {
+    const { isDarkMode } = useContext(authContext);
     return (
-        <div className="hero bg-base-200 my-16 rounded-xl">
+        <div className={isDarkMode? "hero text-white rounded-xl" : "hero text-secondary rounded-xl"}>
             <div className="hero-content flex-col gap-6 lg:flex-row">
                 <div className="lg:w-1/2">
-                    <img
-                        src={img}
-                        className=" rounded-lg shadow" />
+                        <Lottie animationData={onlineShopping}></Lottie>
                 </div>
                 <div className="lg:w-1/2 py-10 ">
                     <div className='my-6'>
-                        <p className="text-xl">Service</p>
+                        <p className="text-xl"> Our Services</p>
                         <h1 className="text-4xl font-semibold">E-COMMERCE</h1>
                     </div>
                     <div className='flex flex-col gap-4'>
-                        <div className='flex items-center gap-4 hover:text-red-500'>
+                        <div className='flex items-center gap-4'>
                             <div className='text-5xl'>
                                 <IoBasketballOutline />
                             </div>
@@ -28,7 +31,7 @@ const Service = () => {
                             </div>
                         </div>
 
-                        <div className='flex items-center gap-4 hover:text-red-500'>
+                        <div className='flex items-center gap-4'>
                             <div className='text-5xl'>
                             <FaFootballBall />
                             </div>
@@ -38,7 +41,7 @@ const Service = () => {
                             </div>
                         </div>
 
-                        <div className='flex items-center gap-4 hover:text-red-500'>
+                        <div className='flex items-center gap-4'>
                             <div className='text-5xl'>
                             <GiAmericanFootballHelmet />
                             </div>

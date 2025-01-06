@@ -41,7 +41,7 @@ const UpdateMyEquipment = () => {
         }
 
         // console.log(updatedEquipments);
-        fetch(`https://equi-sports-server-five.vercel.app/equipments/${equipment._id}`, {
+        fetch(`http://localhost:3000/equipments/${equipment._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': "application/json"

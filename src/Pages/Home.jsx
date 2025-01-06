@@ -1,8 +1,8 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Banner from "../Components/Banner";
 import Service from "../Components/Service";
-import Lottie from "lottie-react";
-import ball from '../assets/ball.json'
+// import Lottie from "lottie-react";
+// import ball from '../assets/ball.json';
 import { MdOutlineSportsSoccer } from "react-icons/md";
 import { IoTennisballSharp } from "react-icons/io5";
 import { BiCricketBall } from "react-icons/bi";
@@ -11,31 +11,32 @@ import { useContext } from "react";
 import { authContext } from "../Provider/AuthProvider";
 import Partner from "../Components/Partner";
 
-
-
-
 const Home = () => {
-
-
     const equipments = useLoaderData();
-    // console.log(equipments);
-    const { isDarkMode } = useContext(authContext)
+    const { isDarkMode } = useContext(authContext);
+    const navigate = useNavigate();
+
+    const handleViewDetails = (link) => {
+        navigate(`/details/${link}`)
+    }
 
     return (
-        <div className={isDarkMode && 'bg-slate-800'}>
-            <div className="py-10 w-11/12 md:w-10/12 mx-auto">
-                <Banner></Banner>
-                <div>
-                    <div className={isDarkMode ? 'text-white text-center mt-4' : 'text-center mt-4'}>
-                        <Lottie animationData={ball} style={{ height: '6rem' }}></Lottie>
+        <div className={isDarkMode ? 'bg-[#343A34]' : ''}>
+            <div className="pb-10">
+                <Banner />
+
+                {/* Category Section */}
+                <div className="w-11/12 mx-auto mt-12">
+                    <div className={isDarkMode ? 'text-white text-center' : 'text-center'}>
+                        {/* <Lottie animationData={ball} style={{ height: '6rem' }} /> */}
                         <p className="text-xl">Best Seller Product of this Week</p>
                         <h3 className="text-4xl font-semibold">Deal of The Week</h3>
                     </div>
-                    <div className={isDarkMode ? 'text-white flex gap-4 md:gap-20 justify-center my-5' : 'flex gap-4 md:gap-20 justify-center my-5'}>
+                    <div className={isDarkMode ? 'text-white flex gap-4 md:gap-20 justify-center my-2' : 'flex gap-4 md:gap-20 justify-center my-2'}>
                         <Slide direction="left">
                             <div>
                                 <div className="text-7xl"><MdOutlineSportsSoccer /></div>
-                                <p className="py-2 px-3 border border-purple-500 w-fit rounded-xl font-medium cursor-pointer">Soccer</p>
+                                <button className="mx-auto flex py-1 px-3 rounded text-buttonText border bg-[#6B705C] border-b-2 border-[#E6BE00] shadow hover:scale-95 transition-transform">Soccer</button>
                             </div>
                         </Slide>
 
@@ -43,47 +44,62 @@ const Home = () => {
                             <Rotate>
                                 <div className="text-7xl"><IoTennisballSharp /></div>
                             </Rotate>
-                            <p className="py-2 px-3 border border-purple-500 w-fit rounded-xl font-medium cursor-pointer">Tennis</p>
+                            <button className="mx-auto flex py-1 px-3 rounded text-buttonText border bg-[#6B705C] border-b-2 border-[#E6BE00] shadow hover:scale-95 transition-transform">Tennis</button>
                         </div>
 
                         <Slide direction="right">
-                            <div >
+                            <div>
                                 <div className="text-7xl"><BiCricketBall /></div>
-                                <p className="py-2 px-3 border border-purple-500 w-fit rounded-xl font-medium cursor-pointer">Cricket</p>
+                                <button className="mx-auto flex py-1 px-3 rounded text-buttonText border bg-[#6B705C] border-b-2 border-[#E6BE00] shadow hover:scale-95 transition-transform">Cricket</button>
                             </div>
                         </Slide>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
+                    {/* Card Section */}
+                    <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 my-8">
                         {
-                            equipments.slice(0, 6).map(equipment => <div key={equipment._id}>
-                                <div className="card bg-base-100  shadow">
-                                    <figure>
-                                        <img
-                                            src={equipment.Image}
-                                            alt="Shoes" />
-                                    </figure>
-                                    <div className="card-body">
-                                        <h2 className="card-title">{equipment.ItemName}</h2>
-                                        <div className="flex items-center justify-between">
-                                            <p>Price: ${equipment.Price}</p>
-                                            <p className="text-end">Rating: {equipment.Rating}</p>
+                            equipments.slice(0, 8).map(equipment => (
+                                <div onClick={() => handleViewDetails(equipment._id)} key={equipment._id} className="flex flex-col h-full cursor-pointer">
+                                    <div className="card bg-base-100 rounded shadow h-full flex flex-col">
+                                        <figure>
+                                            <img src={equipment.Image} alt="Equipment" />
+                                        </figure>
+                                        <div className="card-body p-4 flex flex-col justify-between flex-grow">
+                                            <h2 className="font-semibold">{equipment.ItemName}</h2>
+                                            <div className="flex items-center justify-between">
+                                                <p>${equipment.Price}</p>
+                                                {/* <p className="text-end">Rating: {equipment.Rating}</p> */}
+                                                <div className="rating rating-sm">
+                                                    {[...Array(5)].map((_, index) => (
+                                                        <input
+                                                            key={index}
+                                                            type="radio"
+                                                            name={`rating-${equipment._id}`}
+                                                            className={`mask mask-star-2 bg-yellow-400 ${index < Math.round(equipment.Rating) ? '' : 'opacity-20'}`}
+                                                            readOnly
+                                                        />
+                                                    ))}
+                                                </div>
+                                            </div>
+                                            {/* <Link to={`/details/${equipment._id}`}>
+                                                <button className="text-center py-1 px-2 border border-red-500 w-fit mx-auto rounded">Details</button>
+                                            </Link> */}
                                         </div>
-                                        <Link to={`/details/${equipment._id}`}><button className="text-center py-2 px-4 border border-red-500 w-fit mx-auto rounded-lg">Details</button></Link>
                                     </div>
                                 </div>
-                            </div>)
+                            ))
                         }
                     </div>
-                    <Link to={'/equipments'}><button className="mx-auto flex btn btn-warning">View All</button></Link>
+                    <Link to={'/equipments'}>
+                        <button className="mx-auto flex py-1 px-3 rounded text-buttonText border bg-[#6B705C] border-b-2 border-[#E6BE00] shadow hover:scale-95 transition-transform">View All</button>
+                    </Link>
 
                     <div>
-                        <Service></Service>
+                        <Service />
                     </div>
                     <div>
-                        <Partner></Partner>
+                        <Partner />
                     </div>
-
                 </div>
             </div>
         </div>

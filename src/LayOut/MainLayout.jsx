@@ -8,7 +8,7 @@ const MainLayout = () => {
 
    
     return (
-        <div>
+        <div className="bg-[#f8f4e9]">
             <Navbar></Navbar>
             <div>
                 <div className="">
