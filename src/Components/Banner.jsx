@@ -27,7 +27,9 @@ const Banner = () => {
                             <Link to={'/equipments'}>
                                 <button className="btn btn-warning">Discover More</button>
                             </Link>
+                            <a href="#topRatedProducts">
                             <button className="btn btn-outline btn-accent">Best Deal</button>
+                            </a>
                         </div>
 
                     </div>

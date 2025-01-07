@@ -20,7 +20,7 @@ const TopRated = () => {
     // console.log(topRatedProducts)
 
     return (
-        <div className="my-16">
+        <div className="my-16" id="topRatedProducts">
             <div>
                 <div className={isDarkMode ? 'text-white text-center' : 'text-center'}>
                     {/* <Lottie animationData={ball} style={{ height: '6rem' }} /> */}
