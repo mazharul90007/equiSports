@@ -3,7 +3,7 @@ import { IoFootball } from "react-icons/io5";
 import { BiCricketBall } from "react-icons/bi";
 import { MdOutlineSportsVolleyball } from "react-icons/md";
 import { PiFootballHelmetDuotone } from "react-icons/pi";
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { useContext } from "react";
 import { authContext } from "../Provider/AuthProvider";
@@ -26,11 +26,13 @@ const AddEquipments = () => {
         const ProcessingTime = form.processingTime.value;
         const StockStatus = form.stock.value;
         const Image = form.photo.value
+        console.log(form.processingTime.value);
 
         const equipments = {
             ItemName,
             CategoryName,
-            Price, Rating,
+            Price: parseInt(Price), 
+            Rating: parseInt(Rating),
             Customization,
             Description,
             ProcessingTime,
@@ -39,21 +41,21 @@ const AddEquipments = () => {
             email: user?.email
         }
 
-        // console.log(equipments);
-        fetch('http://localhost:3000/equipments', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(equipments)
-        })
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data)
-                if (data.insertedId) {
-                    toast.success('Equipment Added Successfully')
-                }
-            })
+        console.log(equipments);
+        // fetch('http://localhost:3000/equipments', {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(equipments)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         // console.log(data)
+        //         if (data.insertedId) {
+        //             toast.success('Equipment Added Successfully')
+        //         }
+        //     })
     }
 
     return (

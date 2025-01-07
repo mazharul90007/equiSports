@@ -1,4 +1,4 @@
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { Link, useLoaderData} from "react-router-dom";
 import Banner from "../Components/Banner";
 import Service from "../Components/Service";
 // import Lottie from "lottie-react";
@@ -11,14 +11,12 @@ import { useContext } from "react";
 import { authContext } from "../Provider/AuthProvider";
 import Partner from "../Components/Partner";
 
+import ProductCard from "../Components/ProductCard";
+import TopRated from "../Components/TopRated";
+
 const Home = () => {
     const equipments = useLoaderData();
     const { isDarkMode } = useContext(authContext);
-    const navigate = useNavigate();
-
-    const handleViewDetails = (link) => {
-        navigate(`/details/${link}`)
-    }
 
     return (
         <div className={isDarkMode ? 'bg-[#343A34]' : ''}>
@@ -58,41 +56,16 @@ const Home = () => {
                     {/* Card Section */}
                     <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 my-8">
                         {
-                            equipments.slice(0, 8).map(equipment => (
-                                <div onClick={() => handleViewDetails(equipment._id)} key={equipment._id} className="flex flex-col h-full cursor-pointer">
-                                    <div className="card bg-base-100 rounded shadow h-full flex flex-col">
-                                        <figure>
-                                            <img src={equipment.Image} alt="Equipment" />
-                                        </figure>
-                                        <div className="card-body p-4 flex flex-col justify-between flex-grow">
-                                            <h2 className="font-semibold">{equipment.ItemName}</h2>
-                                            <div className="flex items-center justify-between">
-                                                <p>${equipment.Price}</p>
-                                                {/* <p className="text-end">Rating: {equipment.Rating}</p> */}
-                                                <div className="rating rating-sm">
-                                                    {[...Array(5)].map((_, index) => (
-                                                        <input
-                                                            key={index}
-                                                            type="radio"
-                                                            name={`rating-${equipment._id}`}
-                                                            className={`mask mask-star-2 bg-yellow-400 ${index < Math.round(equipment.Rating) ? '' : 'opacity-20'}`}
-                                                            readOnly
-                                                        />
-                                                    ))}
-                                                </div>
-                                            </div>
-                                            {/* <Link to={`/details/${equipment._id}`}>
-                                                <button className="text-center py-1 px-2 border border-red-500 w-fit mx-auto rounded">Details</button>
-                                            </Link> */}
-                                        </div>
-                                    </div>
-                                </div>
-                            ))
+                            equipments.slice(0, 8).map(equipment => <ProductCard key={equipment._id} equipment={equipment}></ProductCard>)
                         }
                     </div>
                     <Link to={'/equipments'}>
                         <button className="mx-auto flex py-1 px-3 rounded text-buttonText border bg-[#6B705C] border-b-2 border-[#E6BE00] shadow hover:scale-95 transition-transform">View All</button>
                     </Link>
+
+                    <div>
+                        <TopRated></TopRated>
+                    </div>
 
                     <div>
                         <Service />
