@@ -9,7 +9,7 @@ const TopRated = () => {
     const [topRatedProducts, setTopRatedProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/products')
+        axios.get('https://equi-sports-server-five.vercel.app/products')
             .then(res => {
                 const data = res.data;
                 const sortedRating = [...data].sort((a, b) => b.Rating - a.Rating);

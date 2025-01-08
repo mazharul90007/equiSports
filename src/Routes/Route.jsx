@@ -21,7 +21,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element: <Home></Home>,
-                loader: ()=> fetch('http://localhost:3000/products')
+                loader: ()=> fetch('https://equi-sports-server-five.vercel.app/products')
             },
             {
                 path: '/login',
@@ -34,12 +34,12 @@ const router = createBrowserRouter([
             {
                 path: '/equipments',
                 element: <Equipments></Equipments>,
-                loader: ()=> fetch('http://localhost:3000/products')
+                loader: ()=> fetch('https://equi-sports-server-five.vercel.app/products')
             },
             {
                 path: '/details/:id',
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:3000/products/${params.id}`)
+                loader: ({params})=> fetch(`https://equi-sports-server-five.vercel.app/products/${params.id}`)
             },
             {
                 path: '/addEquipments',
@@ -48,17 +48,17 @@ const router = createBrowserRouter([
             {
                 path: '/myEquipments',
                 element: <PrivateRoute><MyEquipments></MyEquipments></PrivateRoute>,
-                // loader: ()=> fetch(`http://localhost:3000/equipments`)
+                // loader: ()=> fetch(`https://equi-sports-server-five.vercel.app/equipments`)
             },
             {
                 path: '/myEquipmentDetails/:id',
                 element: <PrivateRoute><MyEquipmentDetails></MyEquipmentDetails></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:3000/equipments/${params.id}`)
+                loader: ({params})=> fetch(`https://equi-sports-server-five.vercel.app/equipments/${params.id}`)
             },
             {
                 path: '/myEquipmentUpdate/:id',
                 element: <PrivateRoute><UpdateMyEquipment></UpdateMyEquipment></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:3000/equipments/${params.id}`)
+                loader: ({params})=> fetch(`https://equi-sports-server-five.vercel.app/equipments/${params.id}`)
             }
         ]
     },

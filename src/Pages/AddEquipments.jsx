@@ -42,7 +42,7 @@ const AddEquipments = () => {
         }
 
         console.log(equipments);
-        // fetch('http://localhost:3000/equipments', {
+        // fetch('https://equi-sports-server-five.vercel.app/equipments', {
         //     method: 'POST',
         //     headers: {
         //         'content-type': 'application/json'
