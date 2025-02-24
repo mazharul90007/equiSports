@@ -159,7 +159,7 @@ const Navbar = () => {
                     <DarkModeToggle
                         onChange={setIsDarkMode}
                         checked={isDarkMode}
-                        size={50}
+                        size={60}
                     />
                 </div>
             </div>
