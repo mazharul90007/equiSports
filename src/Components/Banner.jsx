@@ -21,7 +21,7 @@ const Banner = () => {
                             <h2 className='text-5xl text-white font-semibold'>All Collections of Sports Equipments</h2>
                         </Slide>
                         <Slide duration={1500}>
-                            <p className='text-white my-4'>We have all kinds of Sports Equipments and Items current market Price and details.</p>
+                            <p className='text-white mt-4 mb-12'>We have all kinds of Sports Equipments and Items current market Price and details.</p>
                         </Slide>
                         <div className='flex gap-3'>
                             <Link to={'/equipments'}>
