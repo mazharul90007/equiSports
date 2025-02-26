@@ -17,6 +17,8 @@ import TopRated from "../Components/TopRated";
 const Home = () => {
     const equipments = useLoaderData();
     const { isDarkMode } = useContext(authContext);
+    console.log(equipments);
+
 
     return (
         <div className={isDarkMode ? 'bg-[#343A34]' : ''}>
