@@ -15,7 +15,7 @@ const Partner = () => {
     return (
         <div className={isDarkMode? "text-white" : "text-black"}>
             <section className=" py-6 rounded-xl">
-                <div className="container mx-auto">
+                <div className="">
                     <div className='mb-5'>
                         <h2 className="text-4xl font-semibold text-center">Our Brand Partners</h2>
                         <p className='text-center'>Get Best Discount from our Brand partners through the year..</p>
